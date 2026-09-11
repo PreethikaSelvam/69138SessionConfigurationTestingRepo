@@ -73,4 +73,4 @@ The results and linked artifacts are in [Evidence/TestReport.md](Evidence/TestRe
 
 ## Current result
 
-All required session and TempData behavior checks pass. The report records an unrelated diagnostic issue where baseline logs unexpectedly execute `/not-found`; this does not prevent either feature from returning its expected value or HTTP 200 response.
+All required session and TempData behavior checks pass for issue [69138](https://github.com/dotnet/aspnetcore/issues/69138).
