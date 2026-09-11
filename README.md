@@ -58,6 +58,10 @@ This isolates the expected missing-middleware `InvalidOperationException` from s
 
 Component diagnostics are configured at Debug level during validation. Keep the application console visible while testing so warnings and exceptions can be captured.
 
+## Validation method
+
+This repository records manual validation. It does not contain an automated integration or browser harness, so the committed artifacts must be reviewed when status codes, displayed values, exception messages, and warning categories are evaluated. UI-initiated and direct URL navigation are exploratory checks in addition to the mandatory Static SSR scenarios.
+
 ## Test coverage
 
 - Baseline reads with and without forced navigation
@@ -69,7 +73,7 @@ Component diagnostics are configured at Debug level during validation. Keep the 
 - Valid JSON with the wrong stored-envelope shape
 - Comparison of normal absence with logged deserialization failures
 
-The results and linked artifacts are in [Evidence/TestReport.md](Evidence/TestReport.md).
+The results and linked artifacts are in [Evidence/SessionConfigurationValidationReport.docx](Evidence/SessionConfigurationValidationReport.docx).
 
 ## Current result
 
