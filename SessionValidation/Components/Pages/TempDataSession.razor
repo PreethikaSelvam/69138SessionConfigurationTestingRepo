@@ -1,0 +1,24 @@
+@page "/tempdata-session"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Session TempData validation</PageTitle>
+
+<h1>Session TempData</h1>
+
+<p id="tempdata-value">Value: @(Message ?? "(empty)")</p>
+
+<form method="post" @formname="seed-tempdata" @onsubmit="Seed">
+    <AntiforgeryToken />
+    <button type="submit" class="btn btn-primary">Seed value</button>
+</form>
+
+@code {
+    [SupplyParameterFromTempData(Name = "message")]
+    public string? Message { get; set; }
+
+    private void Seed()
+    {
+        Message = "tempdata-valid";
+        NavigationManager.NavigateTo("/", forceLoad: true);
+    }
+}

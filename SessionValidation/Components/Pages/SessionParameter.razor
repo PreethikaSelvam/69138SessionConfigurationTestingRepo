@@ -1,0 +1,24 @@
+@page "/session-parameter"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Session parameter validation</PageTitle>
+
+<h1>Session parameter</h1>
+
+<p id="session-value">Value: @(Message ?? "(empty)")</p>
+
+<form method="post" @formname="seed-session" @onsubmit="Seed">
+    <AntiforgeryToken />
+    <button type="submit" class="btn btn-primary">Seed value</button>
+</form>
+
+@code {
+    [SupplyParameterFromSession(Name = "session_message")]
+    public string? Message { get; set; }
+
+    private void Seed()
+    {
+        Message = "session-valid";
+        NavigationManager.NavigateTo("/", forceLoad: true);
+    }
+}
